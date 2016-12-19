@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Platform, View } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Left, Body, Right } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -20,15 +20,10 @@ class NHButton extends Component {  //eslint-disable-line
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-            <Button transparent onPress={this.props.openDrawer}>
-              <Icon name="ios-menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Button</Title>
-          </Body>
-          <Right />
+          <Button transparent onPress={this.props.openDrawer}>
+            <Icon name="ios-menu" />
+          </Button>
+          <Title>Button</Title>
         </Header>
 
         <Content padder>
@@ -38,13 +33,13 @@ class NHButton extends Component {  //eslint-disable-line
             </CardItem>
             <CardItem style={{ flexDirection: 'column' }}>
               <Button block capitalize primary style={styles.mb15}>
-                <Text>{(Platform.OS === 'android') ? androidText : iosText}</Text>
+                {(Platform.OS === 'android') ? androidText : iosText}
               </Button>
-              <Button block success style={styles.mb15}><Text>Success</Text></Button>
-              <Button block info style={styles.mb15}><Text>Info</Text></Button>
-              <Button block warning style={styles.mb15}><Text>Warning</Text></Button>
-              <Button block danger style={styles.mb15}><Text>Danger</Text></Button>
-              <Button block disabled style={styles.mb15}><Text>Disabled</Text></Button>
+              <Button block success style={styles.mb15}>Success</Button>
+              <Button block info style={styles.mb15}>Info</Button>
+              <Button block warning style={styles.mb15}>Warning</Button>
+              <Button block danger style={styles.mb15}>Danger</Button>
+              <Button block disabled style={styles.mb15}>Disabled</Button>
             </CardItem>
           </Card>
 
@@ -53,12 +48,12 @@ class NHButton extends Component {  //eslint-disable-line
               <Text>Button Theme</Text>
             </CardItem>
             <CardItem style={{ flexDirection: 'column' }}>
-              <Button info style={styles.mb15}><Text>Info</Text></Button>
-              <Button danger style={styles.mb15}><Text>Danger</Text></Button>
-              <Button primary style={styles.mb15}><Text>Primary</Text></Button>
-              <Button warning style={styles.mb15}><Text>Warning</Text></Button>
-              <Button success style={styles.mb15}><Text>Success</Text></Button>
-              <Button disabled style={styles.mb15}><Text>Disabled</Text></Button>
+              <Button info style={styles.mb15}>Info</Button>
+              <Button danger style={styles.mb15}>Danger</Button>
+              <Button primary style={styles.mb15}>Primary</Button>
+              <Button warning style={styles.mb15}>Warning</Button>
+              <Button success style={styles.mb15}>Success</Button>
+              <Button disabled style={styles.mb15}>Disabled</Button>
             </CardItem>
           </Card>
 
@@ -67,12 +62,12 @@ class NHButton extends Component {  //eslint-disable-line
               <Text>Round Button</Text>
             </CardItem>
             <CardItem style={{ flexDirection: 'column' }}>
-              <Button rounded info style={styles.mb15}><Text>Info</Text></Button>
-              <Button rounded danger style={styles.mb15}><Text>Danger</Text></Button>
-              <Button rounded primary style={styles.mb15}><Text>Primary</Text></Button>
-              <Button rounded warning style={styles.mb15}><Text>Warning</Text></Button>
-              <Button rounded success style={styles.mb15}><Text>Success</Text></Button>
-              <Button rounded disabled style={styles.mb15}><Text>Disabled</Text></Button>
+              <Button rounded info style={styles.mb15}>Info</Button>
+              <Button rounded danger style={styles.mb15}>Danger</Button>
+              <Button rounded primary style={styles.mb15}>Primary</Button>
+              <Button rounded warning style={styles.mb15}>Warning</Button>
+              <Button rounded success style={styles.mb15}>Success</Button>
+              <Button rounded disabled style={styles.mb15}>Disabled</Button>
             </CardItem>
           </Card>
 
@@ -81,11 +76,11 @@ class NHButton extends Component {  //eslint-disable-line
               <Text>Outline Button</Text>
             </CardItem>
             <CardItem style={{ flexDirection: 'column' }}>
-              <Button bordered info style={styles.mb15}><Text>Info</Text></Button>
-              <Button bordered danger style={styles.mb15}><Text>Danger</Text></Button>
-              <Button bordered style={styles.mb15}><Text>Primary</Text></Button>
-              <Button bordered warning style={styles.mb15}><Text>Warning</Text></Button>
-              <Button bordered success style={styles.mb15}><Text>Success</Text></Button>
+              <Button bordered info style={styles.mb15}>Info</Button>
+              <Button bordered danger style={styles.mb15}>Danger</Button>
+              <Button bordered style={styles.mb15}>Primary</Button>
+              <Button bordered warning style={styles.mb15}>Warning</Button>
+              <Button bordered success style={styles.mb15}>Success</Button>
             </CardItem>
           </Card>
 
@@ -94,9 +89,9 @@ class NHButton extends Component {  //eslint-disable-line
               <Text>Button Size</Text>
             </CardItem>
             <CardItem style={{ flexDirection: 'column' }}>
-              <Button small style={styles.mb15}><Text>Small</Text></Button>
-              <Button success style={styles.mb15}><Text>Regular</Text></Button>
-              <Button warning large style={styles.mb15}><Text>Large</Text></Button>
+              <Button small style={styles.mb15}>Small</Button>
+              <Button success style={styles.mb15}>Regular</Button>
+              <Button warning large style={styles.mb15}>Large</Button>
             </CardItem>
           </Card>
 
@@ -167,29 +162,29 @@ class NHButton extends Component {  //eslint-disable-line
               <View style={styles.buttonContainer}>
                 <Button bordered style={styles.margin}>
                   <Icon name="ios-thumbs-up" />
-                  <Text>Like</Text>
+                  Like
                 </Button>
                 <Button bordered style={styles.margin}>
                   <Icon name="ios-chatboxes" />
-                  <Text>Comment</Text>
+                  Comment
                 </Button>
                 <Button bordered style={styles.margin}>
                   <Icon name="ios-share-alt" />
-                  <Text>Share</Text>
+                  Share
                 </Button>
               </View>
               <View style={styles.buttonContainer}>
                 <Button bordered style={styles.margin}>
                   <Icon name="ios-create-outline" />
-                  <Text>Status</Text>
+                  Status
                 </Button>
                 <Button bordered style={styles.margin}>
                   <Icon name="ios-camera" />
-                  <Text>Photo</Text>
+                  Photo
                 </Button>
                 <Button bordered style={styles.margin}>
                   <Icon name="ios-pin" />
-                  <Text>Check In</Text>
+                  Check In
                 </Button>
               </View>
             </CardItem>

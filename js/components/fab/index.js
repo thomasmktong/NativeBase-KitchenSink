@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
-import { Container, Header, Title, Text, Fab, Button, Icon, Left, Right, Body } from 'native-base';
+import { Container, Header, Title, Text, Fab, Button, Icon } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -29,16 +29,10 @@ class NHFab extends Component {
       <Container style={styles.container}>
 
         <Header>
-          <Left>
-            <Button transparent onPress={this.props.openDrawer}>
-              <Icon name="ios-menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Fab</Title>
-          </Body>
-          <Right />
-
+          <Button transparent onPress={this.props.openDrawer}>
+            <Icon name="ios-menu" />
+          </Button>
+          <Title>Fab</Title>
         </Header>
 
         <View style={{ flex: 1 }}>

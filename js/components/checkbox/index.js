@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Button, Icon, List, ListItem, CheckBox, Text,Left,Right,Body } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, List, ListItem, CheckBox, Text } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -50,35 +50,29 @@ class NHCheckbox extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-            <Button transparent onPress={this.props.openDrawer}>
+          <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Check Box</Title>
-          </Body>
-          <Right>
-          </Right>
+          </Button>
+          <Title>Check Box</Title>
         </Header>
 
         <Content>
-            <ListItem button onPress={() => this.toggleSwitch1()}>
-              <CheckBox checked={this.state.checkbox1} onPress={() => this.toggleSwitch1()} />
-              <Text>Lunch Break</Text>
-            </ListItem>
-            <ListItem button onPress={() => this.toggleSwitch2()}>
-              <CheckBox checked={this.state.checkbox2} onPress={() => this.toggleSwitch2()} />
-              <Text>Daily Stand Up</Text>
-            </ListItem>
-            <ListItem button onPress={() => this.toggleSwitch3()}>
-              <CheckBox checked={this.state.checkbox3} onPress={() => this.toggleSwitch3()} />
-              <Text>Finish list Screen</Text>
-            </ListItem>
-            <ListItem button onPress={() => this.toggleSwitch4()}>
-              <CheckBox checked={this.state.checkbox4} onPress={() => this.toggleSwitch4()} />
-              <Text>Discussion with Client</Text>
-            </ListItem>
+          <ListItem button onPress={() => this.toggleSwitch1()}>
+            <CheckBox checked={this.state.checkbox1} onPress={() => this.toggleSwitch1()} />
+            <Text>Lunch Break</Text>
+          </ListItem>
+          <ListItem button onPress={() => this.toggleSwitch2()}>
+            <CheckBox checked={this.state.checkbox2} onPress={() => this.toggleSwitch2()} />
+            <Text>Daily Stand Up</Text>
+          </ListItem>
+          <ListItem button onPress={() => this.toggleSwitch3()}>
+            <CheckBox checked={this.state.checkbox3} onPress={() => this.toggleSwitch3()} />
+            <Text>Finish list Screen</Text>
+          </ListItem>
+          <ListItem button onPress={() => this.toggleSwitch4()}>
+            <CheckBox checked={this.state.checkbox4} onPress={() => this.toggleSwitch4()} />
+            <Text>Discussion with Client</Text>
+          </ListItem>
         </Content>
       </Container>
     );

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Image, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Thumbnail, Left, Right, Body } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Thumbnail } from 'native-base/backward';
 import styles from './styles';
 
 const deviceWidth = Dimensions.get('window').width;
@@ -32,44 +32,33 @@ class NHCardShowcase extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-            <Button transparent onPress={() => this.replaceAt('card')}>
-              <Icon name="ios-arrow-back" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Card Showcase</Title>
-          </Body>
-          <Right />
+          <Button transparent onPress={() => this.replaceAt('card')}>
+            <Icon name="ios-arrow-back" />
+          </Button>
+          <Title>Card Showcase</Title>
         </Header>
 
         <Content padder>
           <Card style={styles.mb}>
             <CardItem>
-              <Left>
-                <Thumbnail source={logo} />
-                <Body>
-                  <Text>NativeBase</Text>
-                  <Text note>April 15, 2016</Text>
-                </Body>
-              </Left>
+              <Thumbnail source={logo} />
+              <Text>NativeBase</Text>
+              <Text note>April 15, 2016</Text>
             </CardItem>
 
-            <CardItem>
-              <Body>
-                <Image style={{ alignSelf: 'center', height: 150, resizeMode: 'cover', width: deviceWidth / 1.18, marginVertical: 5 }} source={cardImage} />
-                <Text>
+            <CardItem cardBody>
+              <Image style={{ alignSelf: 'center', height: 150, resizeMode: 'cover', width: deviceWidth / 1.17, marginVertical: 5 }} source={cardImage} />
+              <Text>
                 NativeBase is a free and open source framework that enables developers
                 to build high-quality mobile apps using React Native iOS and Android apps
                 with a fusion of ES6.
                 NativeBase builds a layer on top of React Native that provides you with
                 basic set of components for mobile application development.
               </Text>
-                <Button transparent style={{ marginLeft: -7 }} textStyle={{ color: '#87838B' }}>
-                  <Icon name="logo-github" />
-                  <Text>1,926 stars</Text>
+              <Button transparent style={{ marginLeft: -7 }} textStyle={{ color: '#87838B' }}>
+                <Icon name="logo-github" />
+                  1,926 stars
                 </Button>
-              </Body>
             </CardItem>
           </Card>
         </Content>

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon, List, ListItem, Text, Thumbnail,Left,Right,Body } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, List, ListItem, Text, Thumbnail } from 'native-base/backward';
 
 import styles from './styles';
 
@@ -77,25 +77,18 @@ class NHListAvatar extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
           <Button transparent onPress={() => this.replaceAt('list')}>
             <Icon name="ios-arrow-back" />
           </Button>
-          </Left>
-          <Body>
           <Title>List Avatar</Title>
-          </Body>
-          <Right />
         </Header>
 
         <Content>
         <List  dataSource={this.state.dataSource} renderRow={(data) =>
           <ListItem>
             <Thumbnail source={data.img} />
-            <Body>
             <Text>{data.text}</Text>
             <Text note>{data.note}</Text>
-            </Body>
           </ListItem>
         } />
         </Content>

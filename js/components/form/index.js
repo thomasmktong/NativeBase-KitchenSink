@@ -2,12 +2,12 @@
 import React, { Component } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Button,Picker,Item, Icon, List, ListItem,Label, InputGroup, Input, Text, Thumbnail,Left,Right,Body } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, ListItem, InputGroup, Input, Picker, Text, Thumbnail } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
 
-const PItem = Picker.Item;
+const Item = Picker.Item;
 const camera = require('../../../img/camera.png');
 
 class NHForm extends Component {
@@ -36,58 +36,70 @@ class NHForm extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-          <Button transparent onPress={this.props.openDrawer}>
-          <Icon name="ios-menu" />
-          </Button>
-          </Left>
-          <Body>
           <Title>Form</Title>
-          </Body>
-          <Right>
-          </Right>
+
+          <Button transparent onPress={this.props.openDrawer}>
+            <Icon name="ios-menu" />
+          </Button>
         </Header>
 
-        <Content padder>
-          <TouchableOpacity style={{alignItems: 'center'}}>
+        <Content>
+          <TouchableOpacity>
             <Thumbnail size={80} source={camera} style={{ alignSelf: 'center', marginTop: 20, marginBottom: 10 }} />
           </TouchableOpacity>
-            <Item>
-              <Label>Placeholder Input</Label>
-              <Input />
-            </Item>
-            <Item inlineLabel>
-              <Label>First Name</Label>
-              <Input placeholder="John" />
-            </Item>
-            <Item inlineLabel>
-              <Label>Last Name</Label>
-              <Input placeholder="Doe" />
-            </Item>
-            <Item floatingLabel>
-              <Label>Floating Input</Label>
-              <Input />
-            </Item>
-              <InputGroup>
-                <Icon name="ios-person" style={{ color: '#0A69FE' }} />
-                <Input placeholder="EMAIL" />
-              </InputGroup>
-              <InputGroup>
-                <Icon name="ios-unlock" style={{ color: '#0A69FE' }} />
-                <Input placeholder="PASSWORD" secureTextEntry />
-              </InputGroup>
-              <InputGroup>
-                <Icon name="ios-call" style={{ color: '#0A69FE' }} />
-                <Input
-                  placeholder="PHONE"
-                  keyboardType="numeric"
-                />
-              </InputGroup>
-              <Item stackedLabel>
-                <Label>Permanent Address</Label>
-                <Input placeholder="Address" />
-              </Item>
-          <Button style={{ alignSelf: 'center', marginTop: 20, marginBottom: 20 }}><Text>Sign Up</Text></Button>
+          <ListItem>
+            <InputGroup>
+              <Input inlineLabel label="First Name" placeholder="John" />
+            </InputGroup>
+          </ListItem>
+          <ListItem>
+            <InputGroup>
+              <Input inlineLabel label="Last Name" placeholder="Doe" />
+            </InputGroup>
+          </ListItem>
+
+          <ListItem>
+            <InputGroup>
+              <Icon name="ios-person" style={{ color: '#0A69FE' }} />
+              <Input placeholder="EMAIL" />
+            </InputGroup>
+          </ListItem>
+          <ListItem>
+            <InputGroup>
+              <Icon name="ios-unlock" style={{ color: '#0A69FE' }} />
+              <Input placeholder="PASSWORD" secureTextEntry />
+            </InputGroup>
+          </ListItem>
+          <ListItem>
+            <InputGroup>
+              <Icon name="ios-call" style={{ color: '#0A69FE' }} />
+              <Input
+                placeholder="PHONE"
+                keyboardType="numeric"
+              />
+            </InputGroup>
+          </ListItem>
+          <ListItem iconLeft>
+            <Icon name="ios-transgender" style={{ color: '#0A69FE' }} />
+            <Text>GENDER</Text>
+            <Picker
+              iosHeader="Select one"
+              mode="dropdown"
+              selectedValue={this.state.selected1}
+              onValueChange={this.onValueChange.bind(this)}
+            >
+              <Item label="Male" value="key0" />
+              <Item label="Female" value="key1" />
+              <Item label="Other" value="key2" />
+            </Picker>
+          </ListItem>
+
+          <ListItem>
+            <InputGroup >
+              <Input stackedLabel label="Permanent Address" placeholder="Address" />
+            </InputGroup>
+          </ListItem>
+          <Button style={{ alignSelf: 'center', marginTop: 20, marginBottom: 20 }}>Sign Up</Button>
         </Content>
       </Container>
     );

@@ -1,9 +1,9 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Text, H3, Button, Icon, Footer, FooterTab, Left, Right, Body, IconNB } from 'native-base';
+import { Container, Header, Title, Content, Text, H3, Button, Icon, Footer, FooterTab } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
+import myTheme from '../../themes/base-theme';
 import styles from './styles';
 
 class Anatomy extends Component {
@@ -60,48 +60,39 @@ class Anatomy extends Component {
 
   render() {
     return (
-      <Container style={styles.container}>
+      <Container theme={myTheme} style={styles.container}>
 
         <Header>
-          <Left>
-            <Button transparent onPress={this.props.openDrawer}>
-              <Icon name="ios-menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-
+          <Title>Header</Title>
+          <Button transparent onPress={this.props.openDrawer}>
+            <Icon name="ios-menu" />
+          </Button>
         </Header>
-
 
         <Content padder>
           <H3>This is content section</H3>
           <Text style={{ marginTop: 10 }}>
             Selected tab is: {this.state.tab1 ? 1 : this.state.tab2 ? 2 : this.state.tab3 ? 3 : 4}
           </Text>
-
         </Content>
 
-
-        <Footer>
+        <Footer >
           <FooterTab>
-            <Button active={this.state.tab1} onPress={() => this.toggleTab1()} badgeValue={2} badgeColor="green" badgeValueStyle={{ color: '#111' }} >
-              <IconNB name="apps" ios="ios-apps-outline" />
-              <Text>Apps</Text>
+            <Button active={this.state.tab1} onPress={() => this.toggleTab1()} >
+                Apps
+              <Icon name="ios-apps-outline" />
             </Button>
             <Button active={this.state.tab2} onPress={() => this.toggleTab2()} >
-              <IconNB name="camera" />
-              <Text>Camera</Text>
+                Camera
+              <Icon name="ios-camera-outline" />
             </Button>
-            <Button active={this.state.tab3} onPress={() => this.toggleTab3()} badgeValue={51} badgeColor="blue">
-              <IconNB ios="ios-compass" android="md-compass" />
-              <Text>Navigate</Text>
+            <Button active={this.state.tab3} onPress={() => this.toggleTab3()} >
+                Navigate
+              <Icon name="ios-compass" />
             </Button>
             <Button active={this.state.tab4} onPress={() => this.toggleTab4()} >
-              <IconNB name="contact" android="md-contact" />
-              <Text>Contact</Text>
+                Contact
+              <Icon name="ios-contact-outline" />
             </Button>
           </FooterTab>
         </Footer>

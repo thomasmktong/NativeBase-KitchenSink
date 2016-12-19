@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { BackAndroid, StatusBar, NavigationExperimental } from 'react-native';
 import { connect } from 'react-redux';
-import { Drawer } from 'native-base';
+import { Drawer } from 'native-base/backward';
 import { actions } from 'react-native-navigation-redux-helpers';
 
 import { closeDrawer } from './actions/drawer';

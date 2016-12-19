@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Body, Left, Right } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text } from 'native-base/backward';
 
 import styles from './styles';
 
@@ -27,15 +27,10 @@ class NHCardHeaderAndFooter extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-            <Button transparent onPress={() => this.replaceAt('card')}>
-              <Icon name="ios-arrow-back" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Card Header & Footer</Title>
-          </Body>
-          <Right />
+          <Button transparent onPress={() => this.replaceAt('card')}>
+            <Icon name="ios-arrow-back" />
+          </Button>
+          <Title>Card Header & Footer</Title>
         </Header>
 
         <Content padder>
@@ -44,29 +39,23 @@ class NHCardHeaderAndFooter extends Component {
               <Text>NativeBase</Text>
             </CardItem>
             <CardItem>
-              <Body>
-                <Text>
+              <Text>
                 NativeBase is a free and open source framework that enables developers to build
                 high-quality mobile apps using React Native iOS and Android apps
                 with a fusion of ES6.
               </Text>
-              </Body>
             </CardItem>
             <CardItem>
-              <Body>
-                <Text>
+              <Text>
                 NativeBase builds a layer on top of React Native that provides you with
                 basic set of components for mobile application development.
               </Text>
-              </Body>
             </CardItem>
             <CardItem>
-              <Body>
-                <Text>
+              <Text>
                 Get on the mobile fast track with NativeBase, the fastest-growing platform
                 and tool set for iOS and Android development.
               </Text>
-              </Body>
             </CardItem>
             <CardItem header>
               <Text>GeekyAnts</Text>

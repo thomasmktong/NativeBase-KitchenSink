@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon,Text,Left,Right,Body } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, Text } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -29,23 +29,18 @@ class NHList extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
           <Button transparent onPress={this.props.openDrawer}>
-          <Icon name="ios-menu" />
+            <Icon name="ios-menu" />
           </Button>
-          </Left>
-          <Body>
           <Title>List</Title>
-          </Body>
-          <Right />
         </Header>
 
         <Content padder>
-          <Button block style={styles.mb} onPress={() => this.replaceAt('basicList')}><Text>Basic List</Text></Button>
-          <Button block style={styles.mb} onPress={() => this.replaceAt('listDivider')}><Text>List Divider</Text></Button>
-          <Button block style={styles.mb} onPress={() => this.replaceAt('listIcon')}><Text>List Icon</Text></Button>
-          <Button block style={styles.mb} onPress={() => this.replaceAt('listAvatar')}><Text>List Avatar</Text></Button>
-          <Button block style={styles.mb} onPress={() => this.replaceAt('listThumbnail')}><Text>List Thumbnail</Text></Button>
+          <Button block style={styles.mb} onPress={() => this.replaceAt('basicList')}>Basic List</Button>
+          <Button block style={styles.mb} onPress={() => this.replaceAt('listDivider')}>List Divider</Button>
+          <Button block style={styles.mb} onPress={() => this.replaceAt('listIcon')}>List Icon</Button>
+          <Button block style={styles.mb} onPress={() => this.replaceAt('listAvatar')}>List Avatar</Button>
+          <Button block style={styles.mb} onPress={() => this.replaceAt('listThumbnail')}>List Thumbnail</Button>
         </Content>
       </Container>
     );

@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Left, Right, Body } from 'native-base';
-
+import { Container, Header, Title, Content, Button, Icon, Text } from 'native-base/backward';
+import { Card, CardItem } from 'native-base/backward';
 import styles from './styles';
 
 const {
@@ -27,15 +27,10 @@ class NHCardList extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-            <Button transparent onPress={() => this.replaceAt('card')}>
-              <Icon name="ios-arrow-back" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Card List</Title>
-          </Body>
-          <Right />
+          <Button transparent onPress={() => this.replaceAt('card')}>
+            <Icon name="ios-arrow-back" />
+          </Button>
+          <Title>Card List</Title>
         </Header>
 
         <Content padder>

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon, List, ListItem, Text, Badge, Left, Right, Body } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, List, ListItem, Text, Badge } from 'native-base/backward';
 
 import styles from './styles';
 
@@ -27,67 +27,47 @@ class NHListIcon extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-            <Button transparent onPress={() => this.replaceAt('list')}>
-              <Icon name="ios-arrow-back" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>List Icon</Title>
-          </Body>
-          <Right />
+          <Button transparent onPress={() => this.replaceAt('list')}>
+            <Icon name="ios-arrow-back" />
+          </Button>
+          <Title>List Icon</Title>
         </Header>
 
         <Content>
-          <ListItem>
-            <Left>
-              <Icon name="ios-plane" style={{ color: '#0A69FE' }} />
-              <Text>Airplane Mode</Text>
-            </Left>
-            <Body />
-            <Right>
-              <Text note>Off</Text>
-            </Right>
+          <ListItem iconLeft>
+
+            <Icon name="ios-plane" style={{ color: '#0A69FE' }} />
+            <Text>Airplane Mode</Text>
+
+            <Text note>Off</Text>
           </ListItem>
-          <ListItem>
-            <Left>
-              <Icon name="ios-wifi" style={{ color: '#0A69FE' }} />
-              <Text>Wi-Fi</Text>
-            </Left>
-            <Body />
-            <Right>
-              <Text note>GeekyAnts</Text>
-            </Right>
+          <ListItem iconLeft>
+
+            <Icon name="ios-wifi" style={{ color: '#0A69FE' }} />
+            <Text>Wi-Fi</Text>
+
+            <Text note>GeekyAnts</Text>
           </ListItem>
-          <ListItem>
-            <Left>
-              <Icon name="ios-bluetooth" style={{ color: '#0A69FE' }} />
-              <Text>Bluetooth</Text>
-            </Left>
-            <Body />
-            <Right>
-              <Text note>Off</Text>
-            </Right>
+          <ListItem iconLeft>
+
+            <Icon name="ios-bluetooth" style={{ color: '#0A69FE' }} />
+            <Text>Bluetooth</Text>
+
+            <Text note>Off</Text>
           </ListItem>
-          <ListItem>
-            <Left>
-              <Icon name="ios-settings-outline" style={{ color: '#0A69FE' }} />
-              <Text>Software Update</Text>
-            </Left>
-            <Body />
-            <Right>
-              <Badge style={{ backgroundColor: '#8C97B5' }}><Text>2</Text></Badge>
-            </Right>
+          <ListItem iconLeft>
+
+            <Icon name="ios-settings-outline" style={{ color: '#0A69FE' }} />
+            <Text>Software Update</Text>
+
+            <Badge style={{ backgroundColor: '#8C97B5' }}><Text>2</Text></Badge>
           </ListItem>
-          <ListItem>
-            <Left>
-              <Icon name="ios-mail-outline" style={{ color: '#0A69FE' }} />
-              <Text>Mail</Text>
-            </Left>
-            <Body />
-            <Right>
-              <Badge><Text>12</Text></Badge>
-            </Right>
+          <ListItem iconLeft>
+
+            <Icon name="ios-mail-outline" style={{ color: '#0A69FE' }} />
+            <Text>Mail</Text>
+
+            <Badge><Text>12</Text></Badge>
           </ListItem>
         </Content>
       </Container>

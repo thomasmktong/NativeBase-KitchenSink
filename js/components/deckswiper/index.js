@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Image, View } from 'react-native';
-import { Container, Header, Title, Button, Icon, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Right, Body, Content } from 'native-base';
-
+import { Container, Header, Title, Button, Icon, Card, CardItem, Thumbnail, Text, Content } from 'native-base/backward';
+import { DeckSwiper } from 'native-base/backward';
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
 
@@ -45,15 +45,10 @@ class NHDeckSwiper extends Component {  // eslint-disable-line
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-            <Button transparent onPress={this.props.openDrawer}>
-              <Icon name="ios-menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Deck Swiper</Title>
-          </Body>
-          <Right />
+          <Button transparent onPress={this.props.openDrawer}>
+            <Icon name="ios-menu" />
+          </Button>
+          <Title>Deck Swiper</Title>
         </Header>
 
         <View style={{ flex: 1, padding: 12 }}>
@@ -62,15 +57,11 @@ class NHDeckSwiper extends Component {  // eslint-disable-line
             renderItem={item =>
               <Card style={{ elevation: 3 }}>
                 <CardItem>
-                  <Left>
-                    <Thumbnail source={item.image} />
-                    <Body>
-                      <Text>{item.text}</Text>
-                      <Text note>NativeBase</Text>
-                    </Body>
-                  </Left>
+                  <Thumbnail source={item.image} />
+                  <Text>{item.text}</Text>
+                  <Text note>NativeBase</Text>
                 </CardItem>
-                <CardItem cardBody>
+                <CardItem>
                   <Image style={{ resizeMode: 'cover', width: null, flex: 1, height: 300 }} source={item.image} />
                 </CardItem>
                 <CardItem>

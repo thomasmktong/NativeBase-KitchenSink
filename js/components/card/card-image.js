@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Image, View } from 'react-native';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Thumbnail, Left, Body, Right } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Thumbnail } from 'native-base/backward';
 
 import styles from './styles';
 
@@ -31,30 +31,21 @@ class NHCardImage extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-            <Button transparent onPress={() => this.replaceAt('card')}>
-              <Icon name="ios-arrow-back" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Card Image</Title>
-          </Body>
-          <Right />
+          <Button transparent onPress={() => this.replaceAt('card')}>
+            <Icon name="ios-arrow-back" />
+          </Button>
+          <Title>Card Image</Title>
         </Header>
 
         <Content padder>
           <Card style={styles.mb}>
             <CardItem>
-              <Left>
-                <Thumbnail source={logo} />
-                <Body>
-                  <Text>NativeBase</Text>
-                  <Text note>GeekyAnts</Text>
-                </Body>
-              </Left>
+              <Thumbnail source={logo} />
+              <Text>NativeBase</Text>
+              <Text note>GeekyAnts</Text>
             </CardItem>
 
-            <CardItem cardBody>
+            <CardItem>
               <Image style={{ resizeMode: 'cover', width: null, height: 200, flex: 1 }} source={cardImage} />
             </CardItem>
 
