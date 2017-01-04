@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Button, Icon, Badge, Text } from 'native-base/backward';
+import { Container, Header, Title, Content, Button, Icon, Badge } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -16,30 +16,31 @@ class NHBadge extends Component { //eslint-disable-line
     return (
       <Container style={styles.container}>
         <Header>
+          <Title>Badge</Title>
+
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
-          <Title>Badge</Title>
         </Header>
 
         <Content padder>
-          <Badge style={styles.mb}><Text>2</Text></Badge>
-          <Badge primary style={styles.mb}><Text>2</Text></Badge>
-          <Badge success style={styles.mb}><Text>2</Text></Badge>
-          <Badge info style={styles.mb}><Text>2</Text></Badge>
-          <Badge warning style={styles.mb}><Text>2</Text></Badge>
-          <Badge danger style={styles.mb}><Text>2</Text></Badge>
+          <Badge style={styles.mb}>2</Badge>
+          <Badge primary style={styles.mb}>2</Badge>
+          <Badge success style={styles.mb}>2</Badge>
+          <Badge info style={styles.mb}>2</Badge>
+          <Badge warning style={styles.mb}>2</Badge>
+          <Badge danger style={styles.mb}>2</Badge>
           <Badge
             primary
             style={styles.mb}
           >
-            <Icon name="ios-star" style={{ fontSize: 15, color: '#fff', lineHeight: 20 }} />
+            <Icon name="ios-star" style={{ fontSize: 12, color: '#fff', lineHeight: 14 }} />
           </Badge>
           <Badge
             style={{ backgroundColor: 'black' }}
             textStyle={{ color: 'white' }}
           >
-            <Text>1866</Text>
+            1866
           </Badge>
         </Content>
       </Container>

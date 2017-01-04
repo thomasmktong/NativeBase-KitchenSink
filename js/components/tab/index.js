@@ -2,8 +2,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
-import { Container, Header, Title, Content, Text, H3, Button, Icon, Tab, Footer, FooterTab, Left, Right, Body, Badge, IconNB } from 'native-base';
+import { Container, Header, Title, Content, Text, H3, Button, Icon, Tab, Footer, FooterTab, Left, Right, Body, Badge } from 'native-base/backward';
 
+import { Icon as IconNB } from 'native-base';
 import { openDrawer } from '../../actions/drawer';
 import myTheme from '../../themes/base-theme';
 import styles from './styles';
@@ -53,15 +54,10 @@ class NHTab extends Component {
       <Container theme={myTheme} style={styles.container}>
 
         <Header noShadow>
-          <Left>
             <Button transparent onPress={this.props.openDrawer}>
               <IconNB name="menu" />
             </Button>
-          </Left>
-          <Body>
             <Title>Tab</Title>
-          </Body>
-          <Right />
 
         </Header>
         <Tab>

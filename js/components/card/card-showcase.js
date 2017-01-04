@@ -1,12 +1,11 @@
 
 import React, { Component } from 'react';
-import { Image, Dimensions } from 'react-native';
+import { Image } from 'react-native';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
 import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Thumbnail } from 'native-base/backward';
-import styles from './styles';
 
-const deviceWidth = Dimensions.get('window').width;
+import styles from './styles';
 
 const logo = require('../../../img/logo.png');
 const cardImage = require('../../../img/drawer-cover.png');
@@ -35,11 +34,12 @@ class NHCardShowcase extends Component {
           <Button transparent onPress={() => this.replaceAt('card')}>
             <Icon name="ios-arrow-back" />
           </Button>
+
           <Title>Card Showcase</Title>
         </Header>
 
         <Content padder>
-          <Card style={styles.mb}>
+          <Card style={[styles.mb, { flex: 0 }]}>
             <CardItem>
               <Thumbnail source={logo} />
               <Text>NativeBase</Text>
@@ -47,7 +47,7 @@ class NHCardShowcase extends Component {
             </CardItem>
 
             <CardItem cardBody>
-              <Image style={{ alignSelf: 'center', height: 150, resizeMode: 'cover', width: deviceWidth / 1.17, marginVertical: 5 }} source={cardImage} />
+              <Image style={{ resizeMode: 'cover', width: null }} source={cardImage} />
               <Text>
                 NativeBase is a free and open source framework that enables developers
                 to build high-quality mobile apps using React Native iOS and Android apps
@@ -57,8 +57,8 @@ class NHCardShowcase extends Component {
               </Text>
               <Button transparent style={{ marginLeft: -7 }} textStyle={{ color: '#87838B' }}>
                 <Icon name="logo-github" />
-                  1,926 stars
-                </Button>
+                <Text>1,926 stars</Text>
+              </Button>
             </CardItem>
           </Card>
         </Content>

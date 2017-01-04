@@ -30,6 +30,7 @@ class NHCardHeaderAndFooter extends Component {
           <Button transparent onPress={() => this.replaceAt('card')}>
             <Icon name="ios-arrow-back" />
           </Button>
+
           <Title>Card Header & Footer</Title>
         </Header>
 

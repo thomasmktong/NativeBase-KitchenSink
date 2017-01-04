@@ -2,7 +2,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
-import { Container, Icon, IconNB, Text } from 'native-base';
+import { Container, Icon, Text } from 'native-base/backward';
+import { Icon as IconNB } from 'native-base';
 import { Header, Button, Tabs, TabContent } from 'native-base/ui';
 import { openDrawer } from '../../actions/drawer';
 import myTheme from '../../themes/base-theme';
@@ -24,11 +25,11 @@ class Smart extends Component {
         <View style={{ backgroundColor: '#FBFAFA', flex: 1 }}>
           <Tabs initialPage={1} tabBarPosition="top" vertical tabBarTextStyle={{}} tabBarIconStyle={{}} tabBarStyle={{}} underlineStyle={{}}>
 
-            <TabContent padder tabLabel="Features" tabIcon="camera">
+            <TabContent padder tabLabel="Features" tabIcon="ios-camera">
               <Text>Content 1</Text>
             </TabContent>
 
-            <TabContent padder tabLabel="About" tabIcon="apps">
+            <TabContent padder tabLabel="About" tabIcon="ios-apps">
               <Text>Content 2</Text>
               <Button info bordered rounded style={{}} iconLeft={<IconNB name="arrow-back" />} iconRight={<IconNB name="arrow-forward" />} buttonText={'Button'} buttonTextStyle={{}} />
             </TabContent>

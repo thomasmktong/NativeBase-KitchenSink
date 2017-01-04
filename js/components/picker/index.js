@@ -1,7 +1,9 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Button, Icon, Text, Picker } from 'native-base/backward';
+import { Platform } from 'react-native';
+import { Container, Header, Title, Content, Button, Icon, Picker, Text } from 'native-base/backward';
+
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
 
@@ -34,10 +36,11 @@ class NHPicker extends Component {
     return (
       <Container style={styles.container}>
         <Header>
+          <Title>Picker</Title>
+
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
-          <Title>Picker</Title>
         </Header>
 
         <Content padder>
@@ -46,7 +49,8 @@ class NHPicker extends Component {
             iosHeader="Select one"
             mode="dropdown"
             selectedValue={this.state.selected1}
-            onValueChange={this.onValueChange.bind(this)}
+            onValueChange={this.onValueChange.bind(this)} // eslint-disable-line
+            style={{ marginLeft: (Platform.OS === 'android') ? 0 : -25 }}
           >
             <Item label="Wallet" value="key0" />
             <Item label="ATM Card" value="key1" />

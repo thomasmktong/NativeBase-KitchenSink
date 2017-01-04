@@ -1,10 +1,11 @@
 
 import React, { Component } from 'react';
-import { Image, View } from 'react-native';
+import { Image } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Button, H3,Text } from 'native-base/backward';
+import { Container, Button, View, H3 } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
+import myTheme from '../../themes/base-theme';
 import styles from './styles';
 
 const launchscreenBg = require('../../../img/launchscreen-bg.png');
@@ -18,7 +19,7 @@ class Home extends Component { // eslint-disable-line
 
   render() {
     return (
-      <Container>
+      <Container theme={myTheme}>
         <Image source={launchscreenBg} style={styles.imageContainer}>
           <View style={styles.logoContainer}>
             <Image source={launchscreenLogo} style={styles.logo} />
@@ -28,12 +29,12 @@ class Home extends Component { // eslint-disable-line
             <View style={{ marginTop: 8 }} />
             <H3 style={styles.text}>NativeBase components</H3>
           </View>
-          <View style={{marginBottom: 80}}>
+          <View>
             <Button
               style={{ backgroundColor: '#6FAF98', alignSelf: 'center' }}
               onPress={this.props.openDrawer}
             >
-                <Text>Lets Go!</Text>
+                Lets Go!
             </Button>
           </View>
         </Image>

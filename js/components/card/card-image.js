@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
-import { Image, View } from 'react-native';
+import { Image } from 'react-native';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Thumbnail } from 'native-base/backward';
+import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Thumbnail, View } from 'native-base/backward';
 
 import styles from './styles';
 
@@ -34,11 +34,12 @@ class NHCardImage extends Component {
           <Button transparent onPress={() => this.replaceAt('card')}>
             <Icon name="ios-arrow-back" />
           </Button>
+
           <Title>Card Image</Title>
         </Header>
 
         <Content padder>
-          <Card style={styles.mb}>
+          <Card>
             <CardItem>
               <Thumbnail source={logo} />
               <Text>NativeBase</Text>
@@ -46,22 +47,22 @@ class NHCardImage extends Component {
             </CardItem>
 
             <CardItem>
-              <Image style={{ resizeMode: 'cover', width: null, height: 200, flex: 1 }} source={cardImage} />
+              <Image style={{ resizeMode: 'cover', width: null }} source={cardImage} />
             </CardItem>
 
             <CardItem>
               <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Button transparent>
                   <Icon name="logo-github" />
-                  <Text>1,926</Text>
+                  1,926
                 </Button>
                 <Button transparent>
                   <Icon name="ios-git-network" />
-                  <Text>132</Text>
+                  132
                 </Button>
                 <Button transparent>
                   <Icon name="logo-twitter" />
-                  <Text>197</Text>
+                  197
                 </Button>
               </View>
             </CardItem>

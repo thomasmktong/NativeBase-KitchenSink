@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Button, Icon, InputGroup, Input, Content,Text } from 'native-base/backward';
+import { Container, Header, Button, Icon, InputGroup, Input, Content } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -22,12 +22,12 @@ class NHSearchbar extends Component { // eslint-disable-line
             <Icon name="ios-people" />
           </InputGroup>
           <Button transparent>
-            <Text>Search</Text>
+            Search
           </Button>
         </Header>
 
         <Content padder>
-          <Button block rounded onPress={this.props.openDrawer}><Text>Back</Text></Button>
+          <Button block rounded onPress={this.props.openDrawer}>Back</Button>
         </Content>
       </Container>
     );

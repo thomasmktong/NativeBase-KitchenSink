@@ -30,45 +30,38 @@ class NHListIcon extends Component {
           <Button transparent onPress={() => this.replaceAt('list')}>
             <Icon name="ios-arrow-back" />
           </Button>
+
           <Title>List Icon</Title>
         </Header>
 
         <Content>
-          <ListItem iconLeft>
-
-            <Icon name="ios-plane" style={{ color: '#0A69FE' }} />
-            <Text>Airplane Mode</Text>
-
-            <Text note>Off</Text>
-          </ListItem>
-          <ListItem iconLeft>
-
-            <Icon name="ios-wifi" style={{ color: '#0A69FE' }} />
-            <Text>Wi-Fi</Text>
-
-            <Text note>GeekyAnts</Text>
-          </ListItem>
-          <ListItem iconLeft>
-
-            <Icon name="ios-bluetooth" style={{ color: '#0A69FE' }} />
-            <Text>Bluetooth</Text>
-
-            <Text note>Off</Text>
-          </ListItem>
-          <ListItem iconLeft>
-
-            <Icon name="ios-settings-outline" style={{ color: '#0A69FE' }} />
-            <Text>Software Update</Text>
-
-            <Badge style={{ backgroundColor: '#8C97B5' }}><Text>2</Text></Badge>
-          </ListItem>
-          <ListItem iconLeft>
-
-            <Icon name="ios-mail-outline" style={{ color: '#0A69FE' }} />
-            <Text>Mail</Text>
-
-            <Badge><Text>12</Text></Badge>
-          </ListItem>
+          <List>
+            <ListItem iconLeft>
+              <Icon name="ios-plane" style={{ color: '#0A69FE' }} />
+              <Text>Airplane Mode</Text>
+              <Text note>Off</Text>
+            </ListItem>
+            <ListItem iconLeft>
+              <Icon name="ios-wifi" style={{ color: '#0A69FE' }} />
+              <Text>Wi-Fi</Text>
+              <Text note>GeekyAnts</Text>
+            </ListItem>
+            <ListItem iconLeft>
+              <Icon name="ios-bluetooth" style={{ color: '#0A69FE' }} />
+              <Text>Bluetooth</Text>
+              <Text note>Off</Text>
+            </ListItem>
+            <ListItem iconLeft>
+              <Icon name="ios-settings-outline" style={{ color: '#0A69FE' }} />
+              <Text>Software Update</Text>
+              <Badge style={{ backgroundColor: '#8C97B5' }}>2</Badge>
+            </ListItem>
+            <ListItem iconLeft>
+              <Icon name="ios-mail-outline" style={{ color: '#0A69FE' }} />
+              <Text>Mail</Text>
+              <Badge>12</Badge>
+            </ListItem>
+          </List>
         </Content>
       </Container>
     );

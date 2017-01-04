@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
 import { connect } from 'react-redux';
-import { Content, Text, List, ListItem, Icon } from 'native-base/backward';
-
+import { Content, Text, List, ListItem } from 'native-base';
+import { Icon } from 'native-base/backward';
 import navigateTo from '../../actions/sideBarNav';
 import styles from './style';
 

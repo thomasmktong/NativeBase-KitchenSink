@@ -16,11 +16,11 @@ class NHTypography extends Component {  // eslint-disable-line
     return (
       <Container style={styles.container}>
         <Header>
+          <Title>Typography</Title>
+
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
-          <Title>Typography</Title>
-
         </Header>
 
         <Content padder>

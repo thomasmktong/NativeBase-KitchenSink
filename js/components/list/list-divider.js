@@ -30,54 +30,57 @@ class NHListDivider extends Component {
           <Button transparent onPress={() => this.replaceAt('list')}>
             <Icon name="ios-arrow-back" />
           </Button>
+
           <Title>List Divider</Title>
         </Header>
 
         <Content>
-          <ListItem itemDivider>
-            <Text>A</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Aaron Bennet</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Ali Connors</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Allen Lee</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Andy Hertzfeld</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Angana Ghosh</Text>
-          </ListItem>
+          <List>
+            <ListItem itemDivider>
+              <Text>A</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Aaron Bennet</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Ali Connors</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Allen Lee</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Andy Hertzfeld</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Angana Ghosh</Text>
+            </ListItem>
 
-          <ListItem itemDivider>
-            <Text>B</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Bradley Horowitz</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Brian Swetland</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Brittany Kelso</Text>
-          </ListItem>
+            <ListItem itemDivider>
+              <Text>B</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Bradley Horowitz</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Brian Swetland</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Brittany Kelso</Text>
+            </ListItem>
 
-          <ListItem itemDivider>
-            <Text>C</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Caroline Aaron</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Cendre Urbino</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Claire Barclay</Text>
-          </ListItem>
+            <ListItem itemDivider>
+              <Text>C</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Caroline Aaron</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Cendre Urbino</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Claire Barclay</Text>
+            </ListItem>
+          </List>
         </Content>
       </Container>
     );

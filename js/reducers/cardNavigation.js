@@ -6,7 +6,7 @@ const initialState = {
   index: 0,
   routes: [
     {
-      key: 'home',
+      key: 'fab',
       index: 0,
     },
   ],

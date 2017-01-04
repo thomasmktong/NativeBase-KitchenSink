@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Button, Icon, ListItem, Radio, Text } from 'native-base/backward';
+import { Container, Header, Title, Content, Button, Icon, List, ListItem, Radio, Text } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -62,29 +62,31 @@ class NHRadio extends Component {
     return (
       <Container style={styles.container}>
         <Header>
+          <Title>Radio</Title>
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
-          <Title>Radio</Title>
         </Header>
 
         <Content>
           <ListItem button onPress={() => this.toggleRadio1()} >
-            <Text>Lunch Break</Text>
             <Radio selected={this.state.radio1} onPress={() => this.toggleRadio1()} />
+            <Text>Lunch Break</Text>
           </ListItem>
-          <ListItem button onPress={() => this.toggleRadio2()} >
-            <Text >Daily Stand Up</Text>
-            <Radio selected={this.state.radio2} onPress={() => this.toggleRadio2()} />
-          </ListItem>
-          <ListItem button onPress={() => this.toggleRadio3()} >
-            <Text>Finish list Screen</Text>
-            <Radio selected={this.state.radio3} onPress={() => this.toggleRadio3()} />
-          </ListItem>
-          <ListItem button onPress={() => this.toggleRadio4()} >
-            <Text>Discussion with Client</Text>
-            <Radio selected={this.state.radio4} onPress={() => this.toggleRadio4()} />
-          </ListItem>
+          <List>
+            <ListItem button onPress={() => this.toggleRadio2()} >
+              <Radio selected={this.state.radio2} onPress={() => this.toggleRadio2()} />
+              <Text >Daily Stand Up</Text>
+            </ListItem>
+            <ListItem button onPress={() => this.toggleRadio3()} >
+              <Radio selected={this.state.radio3} onPress={() => this.toggleRadio3()} />
+              <Text>Finish list Screen</Text>
+            </ListItem>
+            <ListItem button onPress={() => this.toggleRadio4()} >
+              <Radio selected={this.state.radio4} onPress={() => this.toggleRadio4()} />
+              <Text>Discussion with Client</Text>
+            </ListItem>
+          </List>
         </Content>
       </Container>
     );

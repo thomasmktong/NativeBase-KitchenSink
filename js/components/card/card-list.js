@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon, Text } from 'native-base/backward';
-import { Card, CardItem } from 'native-base/backward';
+import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text } from 'native-base/backward';
+
 import styles from './styles';
 
 const {
@@ -30,11 +30,12 @@ class NHCardList extends Component {
           <Button transparent onPress={() => this.replaceAt('card')}>
             <Icon name="ios-arrow-back" />
           </Button>
+
           <Title>Card List</Title>
         </Header>
 
         <Content padder>
-          <Card style={styles.mb}>
+          <Card style={{ flex: 0 }}>
             <CardItem>
               <Icon name="logo-googleplus" style={{ color: '#DD5044' }} />
               <Text>Google Plus</Text>

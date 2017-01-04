@@ -1,8 +1,3 @@
-
-const React = require('react-native');
-
-const { StyleSheet } = React;
-
 export default {
   container: {
     backgroundColor: '#FBFAFA',
@@ -10,8 +5,8 @@ export default {
   buttonContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
+    marginLeft: 3,
     marginTop: 10,
   },
   mb15: {
@@ -23,15 +18,7 @@ export default {
   iconButton: {
     color: '#007aff',
   },
-  margin: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderColor: '#FFF',
-  },
-  mf: {
-    flexGrow: 1,
-    alignSelf: 'center',
-    alignItems: 'center',
+  margin1: {
+    backgroundColor: 'red',
   },
 };

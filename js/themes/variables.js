@@ -1,19 +1,32 @@
 import color from 'color';
 
-import { Platform } from 'react-native';
+import { Platform, Dimensions } from 'react-native';
 
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
 export default {
 
     // Badge
   badgeBg: '#ED1727',
   badgeColor: '#fff',
-
+  badgePadding: (Platform.OS === 'ios') ? 3 : 0,
 
     // Button
   btnFontFamily: (Platform.OS === 'ios') ? 'HelveticaNeue' : 'Roboto_medium',
   btnDisabledBg: '#b5b5b5',
   btnDisabledClr: '#f1f1f1',
 
+  CheckboxRadius: (Platform.OS === 'ios') ? 13 : 0,
+  CheckboxBorderWidth: (Platform.Os === 'ios') ? 1 : 2,
+  CheckboxPaddingLeft: (Platform.OS === 'ios') ? 5 : 2,
+  CheckboxPaddingBottom: (Platform.OS === 'ios') ? 0 : 5,
+  CheckboxIconSize: (Platform.OS === 'ios') ? (23 / 0.93) : 18,
+  CheckboxIconMarginTop: (Platform.OS === 'ios') ? undefined : 1,
+  CheckboxFontSize: (Platform.OS === 'ios') ? (23 / 0.8) : (23 / 1.2),
+
+  get defaultTextColor() {
+    return this.textColor;
+  },
   get btnPrimaryBg() {
     return this.brandPrimary;
   },
@@ -72,13 +85,13 @@ export default {
   cardDefaultBg: '#fff',
 
 
-  // Check Box
+    // Check Box
   checkboxBgColor: '#039BE5',
   checkboxSize: 23,
   checkboxTickColor: '#fff',
 
 
-  // Color
+    // Color
   brandPrimary: '#5067FF',
   brandInfo: '#5bc0de',
   brandSuccess: '#5cb85c',
@@ -87,7 +100,7 @@ export default {
   brandSidebar: '#252932',
 
 
-  // Font
+    // Font
   fontFamily: (Platform.OS === 'ios') ? 'HelveticaNeue' : 'Roboto',
   fontSizeBase: 15,
 
@@ -102,16 +115,28 @@ export default {
   },
 
 
-  // Footer
+    // Footer
   footerHeight: 55,
   footerDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
 
-  // FooterTab
-  tabBarTextColor: (Platform.OS === 'ios') ? '#6b6b6b' : '#b3c7f9',
-  tabBarActiveTextColor: (Platform.OS === 'ios') ? '#007aff' : '#fff',
-  tabActiveBgColor: (Platform.OS === 'ios') ? '#e4f0fe' : undefined,
 
-  // Header
+    // FooterTab
+  tabBarTextColor: (Platform.OS === 'ios') ? '#6b6b6b' : '#b3c7f9',
+  tabBarTextSize: (Platform.OS === 'ios') ? 14 : 11,
+  activeTab: '#007aff',
+  sTabBarActiveTextColor: '#007aff',
+  tabBarActiveTextColor: (Platform.OS === 'ios') ? '#007aff' : '#fff',
+  tabActiveBgColor: (Platform.OS === 'ios') ? '#cde1f9' : undefined,
+
+    // Tab
+  tabDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
+  topTabBarTextColor: (Platform.OS === 'ios') ? '#6b6b6b' : '#b3c7f9',
+  topTabBarActiveTextColor: (Platform.OS === 'ios') ? '#007aff' : '#fff',
+  topTabActiveBgColor: (Platform.OS === 'ios') ? '#cde1f9' : undefined,
+  topTabBarBorderColor: (Platform.OS === 'ios') ? '#007aff' : '#fff',
+
+
+    // Header
   iosToolbarBtnColor: '#007aff',
   toolbarDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
   toolbarHeight: (Platform.OS === 'ios') ? 64 : 56,
@@ -124,13 +149,13 @@ export default {
   },
 
 
-  // Icon
-  iconFamily: 'Ionicons',
+    // Icon
+  iconFamily: 'MaterialIcons',
   iconFontSize: (Platform.OS === 'ios') ? 30 : 28,
   iconMargin: 7,
 
 
-  // InputGroup
+    // InputGroup
   inputFontSize: 15,
   inputBorderColor: '#D9D5DC',
   inputSuccessBorderColor: '#2b8339',
@@ -152,31 +177,32 @@ export default {
   },
 
 
-  // Line Height
+    // Line Height
   btnLineHeight: 19,
   lineHeightH1: 32,
   lineHeightH2: 27,
-  lineHeightH3: (Platform.OS === 'ios') ? 22 : 25,
+  lineHeightH3: 22,
   iconLineHeight: (Platform.OS === 'ios') ? 37 : 30,
   lineHeight: (Platform.OS === 'ios') ? 20 : 24,
 
 
-  // List
+    // List
   listBorderColor: '#ddd',
   listDividerBg: '#ddd',
   listItemHeight: 45,
-  listItemPadding: 9,
+  listItemPadding: (Platform.OS === 'ios') ? 10 : 12,
   listNoteColor: '#808080',
   listNoteSize: 13,
 
 
-  // Progress Bar
+    // Progress Bar
   defaultProgressColor: '#E4202D',
   inverseProgressColor: '#1A191B',
 
 
-  // Radio Button
+    // Radio Button
   radioBtnSize: (Platform.OS === 'ios') ? 25 : 23,
+  radioBtnLineHeight: (Platform.OS === 'ios') ? 29 : 24,
   radioColor: '#7e7e7e',
 
   get radioSelectedColor() {
@@ -184,32 +210,30 @@ export default {
   },
 
 
-  // Spinner
+    // Spinner
   defaultSpinnerColor: '#45D56E',
   inverseSpinnerColor: '#1A191B',
 
 
-  // Tabs
-  // tabBgColor: '#F8F8F8',
-  // tabFontSize: 15,
-  // tabTextColor: '#fff',
-  tabBgColor: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
+    // Tabs
+  tabBgColor: '#F8F8F8',
   tabFontSize: 15,
-  tabTextColor: (Platform.OS === 'ios') ? '#007aff' : '#fff',
+  tabTextColor: '#222222',
 
 
-  // Text
+    // Text
   textColor: '#000',
   inverseTextColor: '#fff',
 
 
-  // Title
+    // Title
   titleFontSize: (Platform.OS === 'ios') ? 17 : 19,
   subTitleFontSize: (Platform.OS === 'ios') ? 12 : 14,
   subtitleColor: '#8e8e93',
+  titleFontColor: (Platform.OS === 'ios') ? '#000' : '#FFF',
 
 
-  // Other
+    // Other
   borderRadiusBase: (Platform.OS === 'ios') ? 5 : 2,
   borderWidth: 1,
   contentPadding: 10,
@@ -223,4 +247,7 @@ export default {
   inputLineHeight: 24,
   jumbotronBg: '#C9C9CE',
   jumbotronPadding: 30,
+  deviceWidth,
+  deviceHeight,
+  inputGroupRoundedBorderRadius: 30,
 };

@@ -16,11 +16,11 @@ class NHSpinner extends Component { // eslint-disable-line
     return (
       <Container style={styles.container}>
         <Header>
+          <Title>Spinner</Title>
+
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
-          <Title>Spinner</Title>
-
         </Header>
 
         <Content>

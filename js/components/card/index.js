@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon, Text } from 'native-base/backward';
+import { Container, Header, Title, Content, Button, Icon } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -29,10 +29,11 @@ class NHCard extends Component {
     return (
       <Container style={styles.container}>
         <Header>
+          <Title>Card</Title>
+
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
-          <Title>Card</Title>
         </Header>
 
         <Content padder>

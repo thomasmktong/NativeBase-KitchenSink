@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Image, View } from 'react-native';
-import { Container, Header, Title, Button, Icon, Card, CardItem, Thumbnail, Text, Content } from 'native-base/backward';
-import { DeckSwiper } from 'native-base/backward';
+import { Image } from 'react-native';
+import { Container, Header, Title, Button, Icon, View, DeckSwiper, Card, CardItem, Thumbnail, Text } from 'native-base/backward';
+
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
 
@@ -45,13 +45,14 @@ class NHDeckSwiper extends Component {  // eslint-disable-line
     return (
       <Container style={styles.container}>
         <Header>
+          <Title>Deck Swiper</Title>
+
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
-          <Title>Deck Swiper</Title>
         </Header>
 
-        <View style={{ flex: 1, padding: 12 }}>
+        <View padder >
           <DeckSwiper
             dataSource={cards}
             renderItem={item =>
@@ -62,7 +63,7 @@ class NHDeckSwiper extends Component {  // eslint-disable-line
                   <Text note>NativeBase</Text>
                 </CardItem>
                 <CardItem>
-                  <Image style={{ resizeMode: 'cover', width: null, flex: 1, height: 300 }} source={item.image} />
+                  <Image style={{ resizeMode: 'cover', width: null }} source={item.image} />
                 </CardItem>
                 <CardItem>
                   <Icon name={'ios-heart'} style={{ color: '#ED4A6A' }} />

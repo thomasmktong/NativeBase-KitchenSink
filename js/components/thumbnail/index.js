@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
-import { Container, Header, Title, Content, Button, Icon, Thumbnail, Text } from 'native-base/backward';
+import { Container, Header, Title, Content, Button, Icon, Thumbnail, Text, View } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
@@ -20,10 +19,11 @@ class NHThumbnail extends Component { // eslint-disable-line
     return (
       <Container style={styles.container}>
         <Header>
+          <Title>Thumbnail</Title>
+
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
-          <Title>Thumbnail</Title>
         </Header>
 
         <Content padder>

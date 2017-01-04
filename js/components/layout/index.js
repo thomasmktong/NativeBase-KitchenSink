@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Button, Icon } from 'native-base/backward';
-import { Grid, Col } from 'react-native-easy-grid';
+import { Container, Header, Title, Content, Button, Icon, Grid, Col } from 'native-base/backward';
 
 import { openDrawer } from '../../actions/drawer';
 
@@ -16,10 +15,11 @@ class NHLayout extends Component {  // eslint-disable-line
     return (
       <Container>
         <Header>
+          <Title>Layout</Title>
+
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
-          <Title>Layout</Title>
         </Header>
 
         <Content>

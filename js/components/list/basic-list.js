@@ -10,16 +10,8 @@ const {
   replaceAt,
 } = actions;
 
-const data = ['Simon Mignolet', 'Nathaniel Clyne', 'Dejan Lovren', 'Mama Sakho', 'Alberto Moreno', 'Emre Can', 'Joe Allen', 'Phil Coutinho'];
-
 class NHBasicList extends Component {
-  constructor(props) {
-    super(props);
-    const ds = new List.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = {
-      dataSource: ds.cloneWithRows(data),
-    };
-  }
+
   static propTypes = {
     replaceAt: React.PropTypes.func,
     navigation: React.PropTypes.shape({
@@ -38,17 +30,37 @@ class NHBasicList extends Component {
           <Button transparent onPress={() => this.replaceAt('list')}>
             <Icon name="ios-arrow-back" />
           </Button>
+
           <Title>Basic List</Title>
         </Header>
 
         <Content>
-          <List
-            dataSource={this.state.dataSource} renderRow={data =>
-              <ListItem>
-                <Text>{data}</Text>
-              </ListItem>
-          }
-          />
+          <List>
+            <ListItem >
+              <Text>Simon Mignolet</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Nathaniel Clyne</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Dejan Lovren</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Mama Sakho</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Alberto Moreno</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Emre Can</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Joe Allen</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Phil Coutinho</Text>
+            </ListItem>
+          </List>
         </Content>
       </Container>
     );
