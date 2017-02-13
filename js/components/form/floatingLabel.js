@@ -31,7 +31,7 @@ class FloatingLabel extends Component {
         <Header>
           <Left>
             <Button transparent onPress={this.props.openDrawer}>
-              <Icon name="arrow-back" />
+              <Icon name="menu" />
             </Button>
           </Left>
           <Body>

@@ -33,7 +33,7 @@ class IconBtn extends Component {  // eslint-disable-line
         <Header>
           <Left>
             <Button transparent onPress={this.props.openDrawer}>
-              <Icon name="arrow-back" />
+              <Icon name="menu" />
             </Button>
           </Left>
           <Body>
