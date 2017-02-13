@@ -23,6 +23,7 @@ class Header6 extends Component {  // eslint-disable-line
 
   popRoute() {
     this.props.popRoute(this.props.navigation.key);
+      this.props.popRoute(this.props.navigation.key);
   }
 
   render() {
@@ -30,7 +31,7 @@ class Header6 extends Component {  // eslint-disable-line
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.popRoute('header')}>
+            <Button transparent onPress={this.props.openDrawer}>
               <Icon name="arrow-back" />
             </Button>
           </Left>

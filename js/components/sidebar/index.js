@@ -22,14 +22,14 @@ const datas = [
   },
   {
     name: 'Header',
-    route: 'header',
+    route: 'header6',
     icon: 'phone-portrait',
     bg: '#477EEA',
     types: '8',
   },
   {
     name: 'Footer',
-    route: 'footer',
+    route: 'badgeFooter',
     icon: 'phone-portrait',
     bg: '#DA4437',
     types: '4',
@@ -42,14 +42,14 @@ const datas = [
   },
   {
     name: 'Button',
-    route: 'button',
+    route: 'iconBtn',
     icon: 'radio-button-off',
     bg: '#1EBC7C',
     types: '9',
   },
   {
     name: 'Card',
-    route: 'card',
+    route: 'cardList',
     icon: 'keypad',
     bg: '#B89EF5',
     types: '5',
@@ -75,7 +75,7 @@ const datas = [
   },
   {
     name: 'Form & Inputs',
-    route: 'form',
+    route: 'floatingLabel',
     icon: 'call',
     bg: '#EFB406',
     types: '13',
@@ -95,7 +95,7 @@ const datas = [
   },
   {
     name: 'List',
-    route: 'list',
+    route: 'listIcon',
     icon: 'lock',
     bg: '#5DCEE2',
     types: '7',

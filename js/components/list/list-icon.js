@@ -5,6 +5,7 @@ import { Platform } from 'react-native';
 import { actions } from 'react-native-navigation-redux-helpers';
 import { Container, Header, Title, Content, Button, Icon, ListItem, Text, Badge, Left, Right, Body, Switch, Radio, Picker, Separator } from 'native-base';
 
+import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
 
 const Item = Picker.Item;
@@ -16,6 +17,7 @@ const {
 class NHListIcon extends Component {
 
   static propTypes = {
+    openDrawer: React.PropTypes.func,
     popRoute: React.PropTypes.func,
     navigation: React.PropTypes.shape({
       key: React.PropTypes.string,
@@ -46,7 +48,7 @@ class NHListIcon extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.popRoute()}>
+            <Button transparent onPress={this.props.openDrawer}>
               <Icon name="arrow-back" />
             </Button>
           </Left>
@@ -226,6 +228,7 @@ class NHListIcon extends Component {
 
 function bindAction(dispatch) {
   return {
+    openDrawer: () => dispatch(openDrawer()),
     popRoute: key => dispatch(popRoute(key)),
   };
 }

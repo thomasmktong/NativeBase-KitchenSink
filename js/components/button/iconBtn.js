@@ -32,7 +32,7 @@ class IconBtn extends Component {  // eslint-disable-line
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.popRoute()}>
+            <Button transparent onPress={this.props.openDrawer}>
               <Icon name="arrow-back" />
             </Button>
           </Left>
